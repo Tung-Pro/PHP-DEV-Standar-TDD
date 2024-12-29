@@ -1,66 +1,76 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Nguyễn Văn Tùng
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+PHP-DEV-Standar-TDD
 
-## About Laravel
+## Getting Started
+    `git clone https://github.com/Tung-Pro/PHP-DEV-Standar-TDD.git` 
+    
+    php artisan serv
+    
+    npm run dev
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tools/commands used
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Create Migration:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    php artisan make:migration create_tasks_table
+    php artisan make:migrate
 
-## Learning Laravel
+### Tạo Model và Controller:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    php artisan make:model Task
+    php artisan make:controller Task
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Create Form Request Validation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    php artisan make:request CreateTaskRequest
+    php artisan make:request UpdateTaskRequest
 
-## Laravel Sponsors
+### Create Factory and Seed dữ liệu mẫu
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    php artisan make:factory TaskFactory
+    php artisan tinker
+    App\Models\Task::factory(100)->create()
 
-### Premium Partners
+### Creating feature Test
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    php artisan make:test CreateNewTaskTest
+    php artisan make:test DeleteTaskTest
+    php artisan make:test EditTaskTest
+    php artisan make:test GetListTaskTest
+    php artisan make:test ViewTaskTest
 
-## Contributing
+### Create tasks
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    cd resources/views/tasks
+    mkdir create.blade.php
+    mkdir edit.blade.php
+    mkdir index.blade.php
+    mkdir show.blade.php
 
-## Code of Conduct
+### Install Laravel UI and Auth
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    composer require laravel/ui
+    php artisan ui vue --auth
+    npm install; npm run dev
 
-## Security Vulnerabilities
+## Run TEST
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    php artisan test --filter test
 
-## License
+## Run
+List Task
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![image](https://github.com/user-attachments/assets/650f8714-0b98-4a3f-bfcb-65a967bc1b4d)
+
+View Task
+
+![image](https://github.com/user-attachments/assets/87a2122c-b893-41f6-bdf2-bb0291a4343e)
+
+Edit Task
+
+![image](https://github.com/user-attachments/assets/e4ac2d67-5a5e-4594-a114-16328d896c84)
+
+
+
+    
